@@ -45,9 +45,9 @@ Using Turborepo simplifes managing your design system monorepo, as you can have 
 This Turborepo includes the following packages and applications:
 
 - `apps/docs`: Component documentation site with Storybook
-- `packages/@lana/core`: Core React components
-- `packages/@lana/utils`: Shared React utilities
-- `packages/@lana/tsconfig`: Shared `tsconfig.json`s used throughout the Turborepo
+- `packages/lana-ui`: Core React components
+- `packages/lana-utils`: Shared React utilities
+- `packages/lana-tsconfig`: Shared `tsconfig.json`s used throughout the Turborepo
 - `packages/eslint-config-lana`: ESLint preset
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/). Workspaces enables us to "hoist" dependencies that are shared between packages to the root `package.json`. This means smaller `node_modules` folders and a better local dev experience. To install a dependency for the entire monorepo, use the `-w` workspaces flag with `pnpm add`.
@@ -70,7 +70,7 @@ tsup src/index.tsx --format esm,cjs --dts --external react
 
 ```json:lana-core/package.json
 {
-  "name": "@lana/core",
+  "name": "lana-ui",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -121,13 +121,13 @@ Storybook provides us with an interactive UI playground for our components. This
 
 - Use Vite to bundle stories instantly (in milliseconds)
 - Automatically find any stories inside the `stories/` folder
-- Support using module path aliases like `@lana-core` for imports
+- Support using module path aliases like `lana-ui` for imports
 - Write MDX for component documentation pages
 
 For example, here's the included Story for our `Button` component:
 
 ```js:apps/docs/stories/button.stories.mdx
-import { Button } from '@lana-core/src';
+import { Button } from 'lana-ui/src';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 <Meta title="Components/Button" component={Button} />

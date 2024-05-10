@@ -6,6 +6,6 @@
   "linked": [],
   "access": "public",
   "updateInternalDependencies": "patch",
-  "ignore": ["@lana/docs"],
+  "ignore": ["lana-docs"],
   "baseBranch": "main"
 }

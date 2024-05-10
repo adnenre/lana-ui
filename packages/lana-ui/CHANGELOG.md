@@ -1,4 +1,4 @@
-# @lana/core
+# lana-ui
 
 ## 0.0.1
 

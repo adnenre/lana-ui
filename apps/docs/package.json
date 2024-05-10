@@ -1,5 +1,5 @@
 {
-  "name": "@lana/docs",
+  "name": "lana-docs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,12 +9,12 @@
     "clean": "rm -rf .turbo && rm -rf node_modules"
   },
   "dependencies": {
-    "@lana/core": "workspace:0.0.1",
+    "lana-ui": "workspace:0.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@lana/tsconfig": "workspace:0.0.0",
+    "lana-tsconfig": "workspace:0.0.0",
     "@storybook/addon-actions": "^6.5.14",
     "@storybook/addon-docs": "^6.5.14",
     "@storybook/addon-essentials": "^6.5.14",

@@ -1,4 +1,4 @@
-# @lana/utils
+# lana-utils
 
 ## 1.0.0
 

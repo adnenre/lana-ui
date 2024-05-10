@@ -14,7 +14,7 @@ module.exports = {
       resolve: {
         alias: [
           {
-            find: "@lana/core",
+            find: "lana-ui",
             replacement: path.resolve(
               __dirname,
               "../../../packages/lana-core/"

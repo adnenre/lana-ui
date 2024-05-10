@@ -26,9 +26,9 @@ importers:
 
   apps/docs:
     dependencies:
-      '@lana/core':
-        specifier: workspace:0.0.0
-        version: link:../../packages/lana-core
+      lana-ui:
+        specifier: workspace:0.0.1
+        version: link:../../packages/lana-ui
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -36,9 +36,6 @@ importers:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
     devDependencies:
-      '@lana/tsconfig':
-        specifier: workspace:0.0.0
-        version: link:../../packages/lana-tsconfig
       '@storybook/addon-actions':
         specifier: ^6.5.14
         version: 6.5.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -63,6 +60,9 @@ importers:
       eslint-config-lana:
         specifier: workspace:0.0.0
         version: link:../../packages/eslint-config-lana
+      lana-tsconfig:
+        specifier: workspace:0.0.0
+        version: link:../../packages/lana-tsconfig
       serve:
         specifier: ^13.0.4
         version: 13.0.4
@@ -88,11 +88,10 @@ importers:
         specifier: 7.29.4
         version: 7.29.4(eslint@8.57.0)
 
-  packages/lana-core:
+  packages/lana-tsconfig: {}
+
+  packages/lana-ui:
     devDependencies:
-      '@lana/tsconfig':
-        specifier: workspace:*
-        version: link:../lana-tsconfig
       '@types/react':
         specifier: ^18.0.9
         version: 18.3.1
@@ -105,6 +104,9 @@ importers:
       eslint-config-lana:
         specifier: workspace:*
         version: link:../eslint-config-lana
+      lana-tsconfig:
+        specifier: workspace:*
+        version: link:../lana-tsconfig
       react:
         specifier: ^18.1.0
         version: 18.3.1
@@ -115,13 +117,8 @@ importers:
         specifier: ^4.5.3
         version: 4.9.5
 
-  packages/lana-tsconfig: {}
-
   packages/lana-utils:
     devDependencies:
-      '@lana/tsconfig':
-        specifier: workspace:*
-        version: link:../lana-tsconfig
       '@types/react':
         specifier: ^18.0.9
         version: 18.3.1
@@ -134,6 +131,9 @@ importers:
       eslint-config-lana:
         specifier: workspace:*
         version: link:../eslint-config-lana
+      lana-tsconfig:
+        specifier: workspace:*
+        version: link:../lana-tsconfig
       react:
         specifier: ^18.1.0
         version: 18.3.1
@@ -11048,7 +11048,7 @@ snapshots:
       eslint-scope: 7.2.2
       eslint-utils: 3.0.0(eslint@8.4.1)
       eslint-visitor-keys: 3.4.3
-      espree: 9.2.0
+      espree: 9.6.1
       esquery: 1.5.0
       esutils: 2.0.3
       fast-deep-equal: 3.1.3
