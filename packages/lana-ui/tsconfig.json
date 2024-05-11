@@ -1,8 +1,5 @@
 {
   "extends": "lana-tsconfig/react-library.json",
-  "compilerOptions": {
-    "outDir": "dist"
-  },
-  "include": ["src"],
+  "include": ["."],
   "exclude": ["dist", "node_modules"]
 }
