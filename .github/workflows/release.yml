@@ -41,7 +41,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
+      - name: Print current directory
+        shell: bash
+        run: echo $PWD
+
       - name: Install Dependencies
+        shell: bash
         run: pnpm install
 
       - name: Creating .npmrc
