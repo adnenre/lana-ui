@@ -23,15 +23,9 @@ jobs:
     runs-on: ubuntu-latest
     name: "Setup package manager"
     steps:
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 9
-      - name: Get pnpm store directory
-        id: pnpm-cache
+      - name: Get pnpm
         shell: bash
-        run: npm i pnpm -g
-
+        run: npm i pnpm
       - name: Install Dependencies
         shell: bash
         run: pnpm install
@@ -41,6 +35,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: npm i pnpm
+
       - uses: actions/checkout@v4
       - name: build-package
         run: pnpm run build
