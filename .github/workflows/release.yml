@@ -8,8 +8,8 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  release:
-    name: Release
+  build:
+    name: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -49,8 +49,11 @@ jobs:
           EOF
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: build
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: publish
         # https://github.com/changesets/action
         uses: changesets/action@v1
         with:
