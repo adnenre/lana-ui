@@ -18,40 +18,27 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
 
-  setup-package-manager:
+  build:
     needs: checkout
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [20]
+
     steps:
       - uses: actions/checkout@v4
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
           version: 9
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 20
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 20
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
 
-  build:
-    needs: setup-package-manager
-    runs-on: ubuntu-latest
-    name: "build"
-    steps:
-      - uses: actions/checkout@v4
       - name: build-package
         run: pnpm run build
 
-  release:
-    needs: build
-    runs-on: ubuntu-latest
-    name: "release"
-    steps:
       - uses: actions/checkout@v4
       - name: publish
         # https://github.com/changesets/action
