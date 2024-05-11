@@ -8,8 +8,8 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  build:
-    name: build
+  checkout:
+    name: checkout
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -49,6 +49,15 @@ jobs:
           EOF
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  build:
+    needs: checkout
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: build-package
+        run: pnpm run build
+
   release:
     needs: build
     runs-on: ubuntu-latest
