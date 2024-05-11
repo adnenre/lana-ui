@@ -37,7 +37,7 @@ jobs:
     steps:
       - name: Get pnpm store directory
         shell: bash
-        run: npm i pnpm
+        run: npm i -g pnpm
 
       - uses: actions/checkout@v4
       - name: build-package
