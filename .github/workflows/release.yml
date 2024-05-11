@@ -30,11 +30,7 @@ jobs:
       - name: Get pnpm store directory
         id: pnpm-cache
         shell: bash
-        run: npm i pnpm
-
-      - name: Print current directory
-        shell: bash
-        run: echo $PWD
+        run: npm i pnpm -g
 
       - name: Install Dependencies
         shell: bash
