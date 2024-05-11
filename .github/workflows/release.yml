@@ -13,18 +13,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Node.js 16.x
         uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
 
+  setup-package-manager:
+    needs: checkout
+    runs-on: ubuntu-latest
+    name: "Setup package manager"
+    steps:
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 8
-
+          version: 9
       - name: Get pnpm store directory
         id: pnpm-cache
         shell: bash
@@ -50,7 +52,7 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   build:
-    needs: checkout
+    needs: setup-package-manager
     runs-on: ubuntu-latest
 
     steps:
