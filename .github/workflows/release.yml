@@ -33,10 +33,9 @@ jobs:
   build:
     needs: setup-package-manager
     runs-on: ubuntu-latest
-
+    name: "build"
     steps:
       - name: Get pnpm store directory
-        id: pnpm-cache
         shell: bash
         run: npm i pnpm
 
