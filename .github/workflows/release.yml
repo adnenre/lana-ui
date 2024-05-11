@@ -46,6 +46,7 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
+    name: "release"
     steps:
       - uses: actions/checkout@v4
       - name: publish
