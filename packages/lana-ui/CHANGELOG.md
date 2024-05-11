@@ -1,5 +1,11 @@
 # lana-ui
 
+## 0.1.3
+
+### Patch Changes
+
+- af03925: update props on button
+
 ## 0.1.2
 
 ### Patch Changes
