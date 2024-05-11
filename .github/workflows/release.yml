@@ -53,6 +53,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: publish
         # https://github.com/changesets/action
         uses: changesets/action@v1
