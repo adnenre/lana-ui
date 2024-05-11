@@ -50,7 +50,7 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Create Release Pull Request or Publish to npm
+      - name: build
         # https://github.com/changesets/action
         uses: changesets/action@v1
         with:
